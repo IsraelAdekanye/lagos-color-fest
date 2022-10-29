@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import logo from './lagoscolorfestdp1.png'
 import './App.css';
 
 function App() {
@@ -46,9 +46,10 @@ function App() {
     <div className='row'>
       <div className="col-md-12">
       <form action="index.html" method="post">
+      <img src={logo} alt="Lagos Color Fest Logo"/>
       <h1> Register </h1>
       <fieldset>
-        
+
       {/* <legend><span className="number">1</span> Your Basic Info</legend> */}
 
       <label for="name">First Name:</label>
