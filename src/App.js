@@ -47,7 +47,7 @@ function App() {
       <div className="col-md-12">
       <form action="index.html" method="post">
       <img src={logo} alt="Lagos Color Fest Logo"/>
-      <h1> Register </h1>
+      <h1> Register to Attend</h1>
       <fieldset>
 
       {/* <legend><span className="number">1</span> Your Basic Info</legend> */}
@@ -64,8 +64,8 @@ function App() {
       <label for="phone">Phone Number:</label>
       <input type="tel" id="phone" name="phone" placeholder='08023456789'/>
 
-      <label>Date of Birth</label>
-      <input type='date'></input>
+      {/* <label>Date of Birth</label>
+      <input type='date'></input> */}
     
       <label>Gender:</label>
       <input type="radio" id="male" value="male" name="male"/><label for="male" className="light">Male</label><br/>
