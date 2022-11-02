@@ -7,7 +7,7 @@ const ViewAttendees = () => {
         await axios.get(`https://lagos-color-fest-server.herokuapp.com/getAll`)
         .then(res =>{
             if(!res.status===200)return;
-            console.log(res);
+            console.log(res.data);
         })
         .catch(err=>{
             console.error(err.error);

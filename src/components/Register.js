@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../lagoscolorfestdp1.png'
+import axios from "axios";
 import '../App.css';
 
 function Register() {
@@ -9,6 +10,18 @@ function Register() {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [gender, setGender] = useState('');
+
+    const loadAttendees = async () => {
+        await axios.get(`https://lagos-color-fest-server.herokuapp.com/getAll`)
+        .then(res =>{
+            if(!res.status===200)return;
+            console.log(res.data);
+        })
+        .catch(err=>{
+            console.error(err.error);
+        })
+    }
+    useEffect(loadAttendees, []);
 
     const createAttendee = async(e)=> {
         e.preventDefault()
