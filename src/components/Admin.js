@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const ViewAttendees = () => {
 
     const loadAttendees = async () => {
-        await axios.get(`http://localhost:3033/getAll`)
+        await axios.get(`https://lagos-color-fest-server.herokuapp.com/getAll`)
         .then(res =>{
             if(!res.status===200)return;
             console.log(res);

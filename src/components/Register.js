@@ -21,7 +21,7 @@ function Register() {
             })
         }
         console.log(gender)
-        await fetch('http://localhost:3033/register', postParams)
+        await fetch('https://lagos-color-fest-server.herokuapp.com/register', postParams)
         .then(res => {
             if (res.status === 200) {
                 console.log(res)
