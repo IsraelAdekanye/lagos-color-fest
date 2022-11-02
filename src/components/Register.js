@@ -10,8 +10,6 @@ function Register() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [gender, setGender] = useState('');
 
-
-
     const createAttendee = async(e)=> {
         e.preventDefault()
         const postParams = {
