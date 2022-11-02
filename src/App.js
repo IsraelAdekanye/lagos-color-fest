@@ -8,8 +8,8 @@ function App() {
   return (
    
     <div>
-      {/* <Register></Register> */}
-      <ViewAttendees></ViewAttendees>
+      <Register></Register>
+      {/* <ViewAttendees></ViewAttendees> */}
     </div>
 
   );
