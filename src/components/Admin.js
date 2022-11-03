@@ -1,40 +1,34 @@
 import axios from "axios";
-import { useEffect } from "react";
 
 const ViewAttendees = () => {
 
-    const loadAttendees = async () => {
-        await axios.get(`https://lagos-color-fest-server.herokuapp.com/getAll`)
+    let data = [];
+
+        axios.get(`https://lagos-color-fest-server.herokuapp.com/getAll`)
         .then(res =>{
             if(!res.status===200)return;
-            console.log(res.data);
+            //console.log(res)
+            data = res.data
+            console.log(data)
         })
         .catch(err=>{
             console.error(err.error);
         })
-    }
-    useEffect(loadAttendees, []);
-
-    // const viewAttendees = async()=> {
-    //     const postParams = {
-    //         method: 'GET',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         // body: JSON.stringify(
-    //         //     {firstName, lastName, email,
-    //         //     phoneNumber, gender
-    //         // })
-    //     }
-    //     await fetch('http://localhost:3033/getAll', postParams)
-    //     .then(res => {
-    //         if (res.status === 200) {
-    //             console.log(res.json())
-    //         }
-    //      })
-    // }
-
 
   return (
-      null
+    <div>
+      {data.map((data, index) =>{
+            return <tr key={index}>
+            <td>{index} </td> 
+            <td>{data.firstname.toUpperCase()}</td> 
+            <td>{data.lastname.toUpperCase()}</td> 
+            <td> {data.phoneNumber} </td>
+            <td> {data.gender }</td>
+            <td> {data.email} </td>
+        </tr>
+          })}
+    {data[0].firstname}
+      </div>
 
   );
 }

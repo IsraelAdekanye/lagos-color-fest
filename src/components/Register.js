@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import logo from '../lagoscolorfestdp1.png'
-import axios from "axios";
 import '../App.css';
 
 function Register() {
@@ -10,21 +9,12 @@ function Register() {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [gender, setGender] = useState('');
+    const [submitted, setStatus] = useState(false);
 
-    const loadAttendees = async () => {
-        await axios.get(`https://lagos-color-fest-server.herokuapp.com/getAll`)
-        .then(res =>{
-            if(!res.status===200)return;
-            console.log(res.data);
-        })
-        .catch(err=>{
-            console.error(err.error);
-        })
-    }
-    useEffect(loadAttendees, []);
-
+    
     const createAttendee = async(e)=> {
         e.preventDefault()
+        
         const postParams = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -33,11 +23,11 @@ function Register() {
                 phoneNumber, gender
             })
         }
-        console.log(gender)
         await fetch('https://lagos-color-fest-server.herokuapp.com/register', postParams)
         .then(res => {
             if (res.status === 200) {
-                console.log(res)
+              setStatus(true)
+                
                 setFirstName(''); setLastName(''); setEmail(''); 
                 setPhoneNumber(''); setGender('');
                 
@@ -45,26 +35,26 @@ function Register() {
          })
     }
 
-  
-  return (
 
-    <div className='row'>
+    const cond1 = () => {
+      return(
+        <div className='row'>
         <div className="col-md-12">
         <form onSubmit={createAttendee}>
         <img src={logo} alt="Lagos Color Fest Logo"/>
-        <h1> Register to Attend</h1>
+        <h1 className='registerH1'> Register to Attend</h1>
         <fieldset>
     
         <label>First Name:</label>
-        <input type="text" id="name" name="user_name" placeholder='Chukwuma' 
+        <input type="text" id="name" name="user_name" 
         onChange={e => setFirstName(e.target.value.trim())} value={firstName} required/>
     
         <label>Surname:</label>
-        <input type="text" id="name" name="user_name" placeholder='Ciroma'
+        <input type="text" id="name" name="user_name" 
         onChange={e => setLastName(e.target.value.trim())} value={lastName} required/>
       
         <label>Email:</label>
-        <input type="email" id="mail" name="user_email" placeholder='example@abc.com'
+        <input type="email" id="mail" name="user_email" 
         onChange={e => setEmail(e.target.value.trim())} value={email} required/>
     
         <label>Phone Number:</label>
@@ -86,8 +76,27 @@ function Register() {
         </form>
         </div>
       </div>
-    
-      
+      )
+    }
+
+    const cond2 = () => {
+      return (<form>
+      <section>
+        <div className="card">
+        <div className="cond2Div">
+          <i className="checkmark">✓</i>
+        </div>
+          <h1 className="success">Success</h1> 
+          <p><br/> Your ticket is on its way to your mail!</p>
+        </div>
+      </section>
+      </form>)
+    }
+
+  return (
+    <div>
+      {submitted? cond2() : cond1()}
+    </div>
   );
 }
 
