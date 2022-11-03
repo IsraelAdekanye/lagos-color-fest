@@ -87,6 +87,7 @@ function Register() {
           <i className="checkmark">✓</i>
         </div>
           <h1 className="success">Success</h1> 
+          <br/>
           <p>Thank you <b>{firstName}</b> <br/><br/> Your ticket is on its way to your mail!</p>
         {/* </div> */}
       </section>
