@@ -23,7 +23,7 @@ function Register() {
                 phoneNumber, gender
             })
         }
-        await fetch('https://lagos-color-fest-server.herokuapp.com/register', postParams)
+        await fetch(process.env.REACT_APP_REGISTER_URL, postParams)
         .then(res => {
             if (res.status === 200) {
               setStatus(true)
@@ -54,7 +54,7 @@ function Register() {
         onChange={e => setLastName(e.target.value.trim())} value={lastName} required/>
       
         <label>Email:</label>
-        <input type="email" id="mail" name="user_email" 
+        <input type="email" id="mail" name="user_email" placeholder='example@abc.com'
         onChange={e => setEmail(e.target.value.trim())} value={email} required/>
     
         <label>Phone Number:</label>
