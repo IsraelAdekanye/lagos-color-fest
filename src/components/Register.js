@@ -58,7 +58,7 @@ function Register() {
         onChange={e => setEmail(e.target.value.trim())} value={email} required/>
     
         <label>Phone Number:</label>
-        <input type="tel" id="phone" name="phone" placeholder='08023456789'
+        <input type="tel" id="phone" name="phone" placeholder='08023456789' pattern="[0]{1}[0-9]{10}"
         onChange={e => setPhoneNumber(e.target.value.trim())} value={phoneNumber} required/>
     
         <div className="formRadio" onChange={e => {setGender(e.target.value); }} >
