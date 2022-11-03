@@ -28,8 +28,8 @@ function Register() {
             if (res.status === 200) {
               setStatus(true)
                 
-                setFirstName(''); setLastName(''); setEmail(''); 
-                setPhoneNumber(''); setGender('');
+                // setFirstName(''); setLastName(''); setEmail(''); 
+                // setPhoneNumber(''); setGender('');
                 
             }
          })
@@ -82,20 +82,20 @@ function Register() {
     const cond2 = () => {
       return (<form>
       <section>
-        <div className="card">
+        {/* <div className="card"> */}
         <div className="cond2Div">
           <i className="checkmark">✓</i>
         </div>
           <h1 className="success">Success</h1> 
-          <p><br/> Your ticket is on its way to your mail!</p>
-        </div>
+          <p>Thank you <b>{firstName}</b> <br/><br/> Your ticket is on its way to your mail!</p>
+        {/* </div> */}
       </section>
       </form>)
     }
 
   return (
     <div>
-      {submitted? cond2() : cond1()}
+      {submitted? cond1() : cond2()}
     </div>
   );
 }

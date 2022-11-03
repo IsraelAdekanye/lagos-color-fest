@@ -133,6 +133,7 @@ section {
   background: #EBF0F5;
   height: 800px;
   align-items: center;
+  width: 100%;
 }
   .success {
     color: #88B04B;
@@ -153,18 +154,19 @@ i {
   line-height: 200px;
   margin-left:-15px;
 }
-.card {
+/* .card {
   background: white;
   padding: 60px;
   border-radius: 4px;
   box-shadow: 0 2px 3px #C8D0D8;
-  display: inline-block;
+  display: inline;
   margin: 0 auto;
-}
+  width: 100%;
+} */
 .cond2Div {
   border-radius:200px; 
   height:200px; 
   width:200px; 
   background: #F8FAF5; 
-  margin:0 auto
+  margin:0 auto;
 }
