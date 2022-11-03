@@ -96,7 +96,7 @@ function Register() {
 
   return (
     <div>
-      {submitted? cond2() : cond1()}
+      {submitted? cond1() : cond2()}
     </div>
   );
 }
