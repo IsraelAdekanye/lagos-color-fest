@@ -36,7 +36,7 @@ function Register() {
     }
 
 
-    const cond1 = () => {
+    const registrationForm = () => {
       return(
         <div className='row'>
         <div className="col-md-12">
@@ -79,7 +79,7 @@ function Register() {
       )
     }
 
-    const cond2 = () => {
+    const successPage = () => {
       return (<form>
       <section>
         {/* <div className="card"> */}
@@ -96,7 +96,7 @@ function Register() {
 
   return (
     <div>
-      {submitted? cond1() : cond2()}
+      {submitted? successPage() : registrationForm()}
     </div>
   );
 }
