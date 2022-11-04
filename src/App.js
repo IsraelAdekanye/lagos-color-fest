@@ -13,7 +13,8 @@ function App() {
         <Routes>
           
           <Route path="/" element={ <Register/> } />
-          <Route path="/Admin/Dashboard" element={ <ViewAttendees/> } />
+          <Route path="/Admin/Dashboard" 
+          element={ <ViewAttendees/> } />
         </Routes>
       </BrowserRouter>
     </div>
