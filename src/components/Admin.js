@@ -33,6 +33,7 @@ const ViewAttendees = () => {
                             <th> First Name</th> 
                             <th>Last Name</th> 
                             <th>Phone Number</th> 
+                            <th>Reg. ID</th> 
                             <th>Gender</th> 
                             <th>Email</th>
                         </tr>
@@ -40,12 +41,13 @@ const ViewAttendees = () => {
                     <tbody>
                         {data.map( (data, index) => {
                         return <tr key={index}>
-                            <td>{index + 1} </td> 
+                            <td>{index + 1}</td> 
                             <td>{data.firstName.toUpperCase()}</td> 
                             <td>{data.lastName.toUpperCase()}</td> 
-                            <td> {data.phoneNumber} </td>
-                            <td> {data.gender }</td>
-                            <td> {data.email} </td>
+                            <td>{data.phoneNumber}</td>
+                            <td>{data.uuid}</td>
+                            <td>{data.gender}</td>
+                            <td>{data.email}</td>
                         </tr> } )}
                     </tbody>
                 </table>

@@ -10,17 +10,18 @@ function Register() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [gender, setGender] = useState('');
     const [submitted, setStatus] = useState(false);
+    const [uuid, setUUID] = useState('')
 
     
     const createAttendee = async(e)=> {
         e.preventDefault()
-        
+        setUUID((Date.now().toString(36) +'-'+ Math.random().toString(36).substring(2)).toUpperCase())
         const postParams = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(
                 {firstName, lastName, email,
-                phoneNumber, gender
+                phoneNumber, gender, uuid
             })
         }
         await fetch(process.env.REACT_APP_REGISTER_URL, postParams)
@@ -37,6 +38,7 @@ function Register() {
 
 
     const registrationForm = () => {
+      
       return(
         <div className='row'>
         <div className="col-md-12">
@@ -88,7 +90,7 @@ function Register() {
         </div>
           <h1 className="success">Registration Successful</h1> 
           <br/>
-          <p>Thank you <b>{firstName}</b> <br/><br/> Your ticket is on its way to your mail!</p>
+          <p>Thank you <b>{firstName}</b> <br/><br/> Your Reservation Code is <br/><b>{uuid}</b><br/><br/>Your ticket is on its way to your mail!</p>
         {/* </div> */}
       </section>
       </form>)
@@ -96,7 +98,11 @@ function Register() {
 
   return (
     <div>
-      {submitted? successPage() : registrationForm()}
+      {submitted? 
+      successPage()
+       :
+       registrationForm()
+       }
     </div>
   );
 }
