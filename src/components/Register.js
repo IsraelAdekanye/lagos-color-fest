@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import logo from '../lagoscolorfestdp1.png'
 import '../App.css';
 
@@ -10,12 +10,14 @@ function Register() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [gender, setGender] = useState('');
     const [submitted, setStatus] = useState(false);
-    const [uuid, setUUID] = useState('')
+    const [uuid, setUUID] = useState(((Date.now().toString(36)).toUpperCase()))
 
     
     const createAttendee = async(e)=> {
         e.preventDefault()
-        setUUID((Date.now().toString(36) +'-'+ Math.random().toString(36).substring(2)).toUpperCase())
+        //(Date.now().toString(36) +'-'+ Math.random().toString(36).substring(2)).toUpperCase()
+        setUUID((Date.now().toString(36)).toUpperCase());
+        console.log(uuid);
         const postParams = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -38,8 +40,8 @@ function Register() {
 
 
     const registrationForm = () => {
-      
       return(
+        
         <div className='row'>
         <div className="col-md-12">
         <form onSubmit={createAttendee}>
