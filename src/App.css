@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -170,4 +172,69 @@ i {
   background: #F8FAF5; 
   margin:0 auto;
   margin-top: 30%;
+}
+
+
+.students{
+  margin-left: 0.8rem;
+}
+.students input{
+  padding: 0.5rem;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+.students td {
+  padding: 1rem;
+}
+.students table{
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+.students th {
+  transition: all 0.3s ease-out;
+  box-shadow: 5px 8px 25px rgba(0, 0, 0, 0.083);
+  padding: 1rem 2rem ;
+  background-color: white;
+}
+.students{
+        margin-left: 2rem;
+        height: 100vh;
+        overflow: scroll;
+} 
+
+@media screen and (max-width: 900px) {
+  .schoolHome{
+      margin-left: -4rem;
+  }
+  .flexthree{
+      flex-direction: column;
+  }
+  .flexAll{
+      flex-direction: column;
+  }
+  .people{
+      width: 70%;
+  }
+  .sideBar{
+      font-size: 0.8rem;
+      width: 60%;
+  }
+  .students{
+      margin-left: 1rem;
+      height: 100vh;
+      overflow: scroll;
+  }
+  .students th{
+      padding: 0.3rem 0.7rem;
+      font-size: 12px;
+  }
+  .students table{
+      margin-left: -0.5rem;
+  }
+  .students td{
+      padding: 0.5rem;
+      font-size: 10px;
+  }
 }
