@@ -17,7 +17,6 @@ function Register() {
         e.preventDefault()
         //(Date.now().toString(36) +'-'+ Math.random().toString(36).substring(2)).toUpperCase()
         setUUID((Date.now().toString(36)).toUpperCase());
-        console.log(uuid);
         const postParams = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -100,11 +99,11 @@ function Register() {
 
   return (
     <div>
-      {submitted? 
+      {/* {submitted? 
       successPage()
        :
        registrationForm()
-       }
+       } */}
     </div>
   );
 }
