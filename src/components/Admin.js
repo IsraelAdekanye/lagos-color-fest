@@ -43,6 +43,8 @@ const ViewAttendees = () => {
     <div  style={{display : "flex",minHeight : "100vh" }}>
     <div className="students">
         <h1>Attendees</h1>
+        <h5>Total {data.length}</h5>
+
         {/* <input type="search" placeholder="Search for Attendees" ></input> */}
         <table>
             <thead>

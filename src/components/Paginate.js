@@ -8,8 +8,8 @@ const Pagination = ({ dataPerPage, totalData, paginate, setDataPerPage }) => {
   }
 
   return (
-    <nav>
-      <div className='pagination'>
+    <nav className='pagination'>
+      <div >
         {pageNumbers.map( (number) => {
           return ( <span key={number} className='page-item'>
             <a onClick={() => paginate(number)} href className='page-link'>
@@ -18,16 +18,13 @@ const Pagination = ({ dataPerPage, totalData, paginate, setDataPerPage }) => {
           </span>
           )
         })}
-      </div>
-      <div className=''>
-                <label>Rows</label>
-                <select onChange={e=> setDataPerPage(e.target.value)} >
+        <b>Max Rows</b><select onChange={e=> setDataPerPage(e.target.value)} >
                     <option value='5'>5</option>
                     <option value='10'>10</option>
                     <option value='15'>15</option>
                     <option value='20'>20</option>
                 </select>
-            </div>
+                </div>
     </nav>
   );
 };

@@ -238,3 +238,15 @@ i {
       font-size: 10px;
   }
 }
+
+
+.pagination span{
+  margin: 10px;
+}
+.pagination select{
+  width: 55px;
+}
+.pagination b{
+  margin: 10px;
+  margin-left: 20%;
+}
