@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Pagination = ({ dataPerPage, totalData, paginate }) => {
+const Pagination = ({ dataPerPage, totalData, paginate, setDataPerPage }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalData / dataPerPage); i++) {
@@ -9,15 +9,25 @@ const Pagination = ({ dataPerPage, totalData, paginate }) => {
 
   return (
     <nav>
-      <ul className='pagination'>
-        {pageNumbers.map(number => (
-          <li key={number} className='page-item'>
-            <a onClick={() => paginate(number)} href='!#' className='page-link'>
+      <div className='pagination'>
+        {pageNumbers.map( (number) => {
+          return ( <span key={number} className='page-item'>
+            <a onClick={() => paginate(number)} href className='page-link'>
               {number}
             </a>
-          </li>
-        ))}
-      </ul>
+          </span>
+          )
+        })}
+      </div>
+      <div className=''>
+                <label>Rows</label>
+                <select onChange={e=> setDataPerPage(e.target.value)} >
+                    <option value='5'>5</option>
+                    <option value='10'>10</option>
+                    <option value='15'>15</option>
+                    <option value='20'>20</option>
+                </select>
+            </div>
     </nav>
   );
 };

@@ -9,7 +9,7 @@ const ViewAttendees = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataPerPage, setDataPerPage] = useState(10);
+  const [dataPerPage, setDataPerPage] = useState(5);
 
 
       
@@ -56,10 +56,11 @@ const ViewAttendees = () => {
                     <th>Email</th>
                 </tr>
             </thead>
-            
+           <Dataset data={currentData} loading={loading} /> 
         </table>
-        <Dataset data={currentData} loading={loading} />
-            <Pagination dataPerPage={dataPerPage} totalData={data.length} paginate={paginate} />
+        
+            <Pagination dataPerPage={dataPerPage} totalData={data.length} 
+            paginate={paginate} setDataPerPage={setDataPerPage} />
     </div>
 </div>
     
