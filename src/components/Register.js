@@ -99,11 +99,11 @@ function Register() {
 
   return (
     <div>
-      {/* {submitted? 
+      {submitted? 
       successPage()
        :
        registrationForm()
-       } */}
+       }
     </div>
   );
 }
