@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from '../lagoscolorfestdp1.png'
 import '../App.css';
 
-function Register() {
+const Register = () => {
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -36,7 +36,6 @@ function Register() {
             }
          })
     }
-
 
     const registrationForm = () => {
       return(
@@ -98,13 +97,14 @@ function Register() {
     }
 
   return (
-    <div>
-      {submitted? 
-      successPage()
-       :
-       registrationForm()
-       }
-    </div>
+    // <div>
+    //   {submitted? 
+    //   successPage()
+    //    :
+    //    registrationForm()
+    //    }
+    // </div>
+    successPage()
   );
 }
 

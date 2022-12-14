@@ -4,7 +4,7 @@ import Register from './components/Register';
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import ViewAttendees from './components/Admin';
 
-function App() {
+const App =()=> {
 
   return (
    
